@@ -8,7 +8,7 @@ function App() {
       <header className="App-header">
         <div className="container">
           <div className="row">
-            <div className="col-6 my-3">
+            <div className="col-6 mt-3 mb-2">
               <h1>
                 EV Range Calculator
               </h1>

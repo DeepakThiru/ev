@@ -64,7 +64,17 @@ function TrueRange() {
     }
   
     return (
-      <div className="container">
+      <div className="container min-vh-100 p-3 bg-light">
+        <div className="row">
+          <div className="col">
+            Remaining range: {fullRange.toFixed(1)} kms.
+          </div>
+        </div>
+        <div className="row">
+          <div className="col">
+            You can travel {safeRange.toFixed(1)} kms before your SoC reaches {safeSoc}%.
+          </div>
+        </div>
         <div className="row">
           <div className="col">
             <label htmlFor="selectCapacity">EV's capacity:</label>
@@ -87,23 +97,11 @@ function TrueRange() {
               {usageOptions}
             </select>
           </div>
-        </div>
-        <div className="row">
           <div className="col">
             <label htmlFor="soc">SoC (%):</label>
           </div>
           <div className="col">
             <input id="soc" type="number" value={soc} onChange={handleSocChange} placeholder="Enter SoC percentage"></input>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col">
-            Remaining range: {fullRange.toFixed(1)} kms.
-          </div>
-        </div>
-        <div className="row">
-          <div className="col">
-            You can travel {safeRange.toFixed(1)} kms before your SoC reaches {safeSoc}%.
           </div>
         </div>
       </div>
