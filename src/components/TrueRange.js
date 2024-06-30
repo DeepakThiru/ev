@@ -1,4 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { ReactComponent as CarSvg } from '../car20_112837.svg';
+// import { ReactComponent as BatterySvg } from '../-battery-charging_86898.svg';
+import {ReactComponent as BatterySvg } from '../aa-battery_55330.svg';
+import { ReactComponent as ChargerSvg } from '../charging_station_129004.svg';
 
 function TrueRange() {
     const [selectedCapacity, setSelectedCapacity] = useState(50.3);
@@ -21,7 +25,7 @@ function TrueRange() {
       const value = Number((i / 10).toFixed(1));
       usageOptions.push(
         <option key={value} value={value}>
-          {value} km/kWh
+          {value}
         </option>
       );
     }
@@ -71,12 +75,12 @@ function TrueRange() {
             <p>You can travel {safeRange.toFixed(1)} kms before your SoC reaches {safeSoc}%.</p>
           </div>
         </div>
-        <div className="row bg-secondary p-2 m-0 mb-3 rounded-4">
-          <div className="col">
-            <label htmlFor="selectCapacity">EV's capacity:</label>
+        <div className="row bg-secondary px-2 py-3 m-0 mb-3 rounded-4">
+          <div className="col-auto">
+            <CarSvg height="50" fill='white'/>
           </div>
           <div className="col">
-            <select id="selectCapacity" value={selectedCapacity} onChange={handleCapacityChange}>
+            <select id="selectCapacity" value={selectedCapacity} onChange={handleCapacityChange} className='form-control rounded-1'>
               <option value="50.3">MG ZS - 50.3 kWh</option>
               <option value="30.2">Tata Nexon - 30.2 kWh</option>
               <option value="26">Tata Tigor - 26 kWh</option>
@@ -84,16 +88,42 @@ function TrueRange() {
             </select>
           </div>
         </div>
-        <div className="row bg-secondary p-2 m-0 rounded-4">
+        <div className="row bg-secondary px-2 py-3 m-0 rounded-4">
           <div className="col-6">
-            <label htmlFor="selectUsage">Current Usage:</label>
-          <select id="selectUsage" value={selectedUsage} onChange={handleUsageChange} className='rounded-1'>
-              {usageOptions}
-            </select>
+            <ChargerSvg height="50"/>
           </div>
           <div className="col-6">
-            <label htmlFor="soc">SoC (%):</label>
-            <input id="soc" type="number" value={soc} onChange={handleSocChange} placeholder="Enter SoC percentage" className='rounded-1'></input>
+            <BatterySvg height="50"/>
+          </div>
+          <div className='w-100'></div>
+          <div className="col-6">
+            <div className='input-group'>
+              <select id="selectUsage" value={selectedUsage} onChange={handleUsageChange} className='form-control rounded-1'>
+                {usageOptions}
+              </select>
+              <div className='input-group-append'>
+                <span className='input-group-text'>km/kWh</span>
+              </div>
+            </div>
+          </div>
+          <div className="col-6">
+          <div className='input-group'>
+              <input id="soc" type="number" value={soc} onChange={handleSocChange} placeholder="Enter SoC percentage" className='form-control rounded-1'>
+              </input>
+              <div className="input-group-append">
+                <span className="input-group-text" id="basic-addon2">%</span>
+              </div>
+            </div>
+            {/* <div className='input-group'>
+              <div className='input-group-prepend'>
+                <span className='input-group-text'>&#128267;</span>
+              </div>
+              <input id="soc" type="number" value={soc} onChange={handleSocChange} placeholder="Enter SoC percentage" className='form-control rounded-1'>
+              </input>
+              <div className="input-group-append">
+                <span className="input-group-text" id="basic-addon2">%</span>
+              </div>
+            </div> */}
           </div>
         </div>
       </div>
