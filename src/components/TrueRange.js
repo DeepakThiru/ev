@@ -65,17 +65,13 @@ function TrueRange() {
   
     return (
       <div className="container min-vh-100 p-3 bg-light">
-        <div className="row">
+        <div className="row bg-white p-2 m-0 mb-3 rounded-4">
           <div className="col">
-            Remaining range: {fullRange.toFixed(1)} kms.
+            <p>Remaining range: {fullRange.toFixed(1)} kms.</p>
+            <p>You can travel {safeRange.toFixed(1)} kms before your SoC reaches {safeSoc}%.</p>
           </div>
         </div>
-        <div className="row">
-          <div className="col">
-            You can travel {safeRange.toFixed(1)} kms before your SoC reaches {safeSoc}%.
-          </div>
-        </div>
-        <div className="row">
+        <div className="row bg-secondary p-2 m-0 mb-3 rounded-4">
           <div className="col">
             <label htmlFor="selectCapacity">EV's capacity:</label>
           </div>
@@ -88,20 +84,16 @@ function TrueRange() {
             </select>
           </div>
         </div>
-        <div className="row">
-          <div className="col">
+        <div className="row bg-secondary p-2 m-0 rounded-4">
+          <div className="col-6">
             <label htmlFor="selectUsage">Current Usage:</label>
-          </div>
-          <div className="col">
-          <select id="selectUsage" value={selectedUsage} onChange={handleUsageChange}>
+          <select id="selectUsage" value={selectedUsage} onChange={handleUsageChange} className='rounded-1'>
               {usageOptions}
             </select>
           </div>
-          <div className="col">
+          <div className="col-6">
             <label htmlFor="soc">SoC (%):</label>
-          </div>
-          <div className="col">
-            <input id="soc" type="number" value={soc} onChange={handleSocChange} placeholder="Enter SoC percentage"></input>
+            <input id="soc" type="number" value={soc} onChange={handleSocChange} placeholder="Enter SoC percentage" className='rounded-1'></input>
           </div>
         </div>
       </div>
