@@ -1,16 +1,19 @@
 {
   "files": {
     "main.css": "/ev/static/css/main.1be8b211.css",
-    "main.js": "/ev/static/js/main.ce9838c9.js",
+    "main.js": "/ev/static/js/main.916f99ea.js",
     "static/js/453.8d7cb6ec.chunk.js": "/ev/static/js/453.8d7cb6ec.chunk.js",
     "service-worker.js": "/ev/service-worker.js",
+    "static/media/aa-battery_55330.svg": "/ev/static/media/aa-battery_55330.2fdf78f6996f9135a9bf745fe342a72c.svg",
+    "static/media/car20_112837.svg": "/ev/static/media/car20_112837.d19a18328e28ed17c5df01b7199fc6c0.svg",
+    "static/media/charging_station_129004.svg": "/ev/static/media/charging_station_129004.764bfbc1ea311a4279a0aeb96717e352.svg",
     "index.html": "/ev/index.html",
     "main.1be8b211.css.map": "/ev/static/css/main.1be8b211.css.map",
-    "main.ce9838c9.js.map": "/ev/static/js/main.ce9838c9.js.map",
+    "main.916f99ea.js.map": "/ev/static/js/main.916f99ea.js.map",
     "453.8d7cb6ec.chunk.js.map": "/ev/static/js/453.8d7cb6ec.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1be8b211.css",
-    "static/js/main.ce9838c9.js"
+    "static/js/main.916f99ea.js"
   ]
 }
